@@ -27,7 +27,7 @@ def get_link():
                 return entry
 
 
-@app.route('/createlink', methods=['GET'])
+@app.route('/createlink', methods=['POST'])
 def create_link():
     args = request.args
     print(args)
@@ -41,9 +41,7 @@ def create_link():
     temp.append(item_data)
     with open(filename, 'w') as f:
             json.dump(temp, f, indent=4)
-            f.save()
             return(item_data)
-
 
 
 if __name__ == '__main__':
