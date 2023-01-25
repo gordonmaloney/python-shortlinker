@@ -3,7 +3,7 @@ import json
 from flask_cors import CORS
 from flask import request
 
-filename = './data/data.json'
+filename = 'data.json'
 
 app = Flask(__name__)
 CORS(app)
@@ -41,6 +41,7 @@ def create_link():
     temp.append(item_data)
     with open(filename, 'w') as f:
             json.dump(temp, f, indent=4)
+            f.save()
             return(item_data)
 
 
